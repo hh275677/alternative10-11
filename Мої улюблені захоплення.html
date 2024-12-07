@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мої захоплення</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+        /* Навиг. */
+        .navigation {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .navigation a:hover {
+            color: #ddd;
+        }
+
+        /* Общие стили */
+        .section {
+            display: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            min-height: 100vh;
+        }
+        .section.active {
+            display: block;
+        }
+
+        /* ст номер 1 */
+        #home .hobby-section {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        #home .hobby-card {
+            width: 40%;
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        #home .hobby-card:hover {
+            transform: scale(1.05);
+        }
+        #home .hobby-card img {
+            max-width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        /* Старинца с хобби */
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 30%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin-top: 20px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <div class="navigation">
+        <a href="#" onclick="showSection('home')">Головна</a>
+        <a href="#" onclick="showSection('travel')">Подорожі</a>
+        <a href="#" onclick="showSection('photography')">Фотографія</a>
+    </div>
+
+    <!-- Ст 1 -->
+    <div id="home" class="section active">
+        <div class="container">
+            <header>
+                <h1 style="text-align: center; margin-bottom: 20px;">Мої захоплення</h1>
+            </header>
+            
+            <div class="intro" style="text-align: center; margin-bottom: 30px;">
+                <h2>Привіт! Мене звуть Володимир</h2>
+                <p>На цьому сайті я хочу розповісти про дві речі, які роблять моє життя яскравим і цікавим - моїх улюблених хобі.</p>
+            </div>
+
+            <div class="hobby-section">
+                <div class="hobby-card">
+                    <h3>Подорожі</h3>
+                    <img src="img/Trevel.jpeg" alt="Путешествия">
+                    <p>Дослідження нових місць, знайомство з культурами та враження</p>
+                    <button onclick="showSection('travel')">Докладніше</button>
+                </div>
+
+                <div class="hobby-card">
+                    <h3>Фотографії</h3>
+                    <img src="img/Photo.jpeg" alt="Фотография">
+                    <p>Знімання моментів, розповідання історій через об’єктив</p>
+                    <button onclick="showSection('photography')">Докладніше</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ст путишествия -->
+    <div id="travel" class="section">
+        <div class="container">
+            <header>
+                <h1>Світ подорожей</h1>
+            </header>
+
+            <h2>Чому я люблю мандрувати</h2>
+            <p>Подорожі - це не просто зміна локації, це можливість відкрити щось нове у собі та світі. Кожна поїздка – це історія, урок та незабутня пригода.</p>
+
+            <div class="gallery">
+                <img src="img/Photo 1.jpg" alt="Путешествие 1">
+                <img src="img/Photo 2.jpg" alt="Путешествие 2">
+                <img src="img/Photo 3.jpg" alt="Путешествие 3">
+            </div>
+
+            <h3>Мої улюблені місця</h3>
+            <p>За останні роки я відвідала багато дивовижних місць: від гірських вершин до морських узбереж. Кожне місце залишило свій слід у моєму серці.</p>
+
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/WwV8_qMBZ3M?si=g9k7IDiznC-lz4Yv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen</iframe></iframe>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button onclick="showSection('home')">Повернутися на головну</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ст фотография -->
+    <div id="photography" class="section">
+        <div class="container">
+            <header>
+                <h1>Світ через об'єктив</h1>
+            </header>
+
+            <h2>Моя любов до фотографії</h2>
+            <p>Фотографія для мене – це спосіб зупинити час, зберегти емоцію, розповісти історію одним кадром. Кожен знімок – це маленьке мистецтво, яке я створюю.</p>
+
+            <div class="gallery" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                <img src="img/img 1.jpg" alt="Фото 1" style="width: 100%; height: 250px; object-fit: cover;">
+                <img src="img/img 2.jpg" alt="Фото 2" style="width: 100%; height: 250px; object-fit: cover;">
+                <img src="img/img 3.jpg" alt="Фото 3" style="width: 100%; height: 250px; object-fit: cover;">
+            </div>
+
+            <h3>Моя фотографічна філософія</h3>
+            <p>Я люблю репортажну зйомку, портрети та натуральну фотографію. Мій фотоапарат завжди зі мною, готовий сфотографувати найяскравіші моменти.</p>
+
+            <div class="video-container">
+                <iframe < width="560" height="315" src="https://www.youtube.com/embed/hn5jjboKYXk?si=f-FJTeEv4DAVtn40" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button onclick="showSection('home')">Вернуться на главную</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('home').classList.remove('active');
+            document.getElementById('travel').classList.remove('active');
+            document.getElementById('photography').classList.remove('active');
+            
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
